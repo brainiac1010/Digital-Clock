@@ -22,20 +22,25 @@
     </div>
 
     <script>
-        let hrs = document.getElementById("hrs");
+     let hrs = document.getElementById("hrs");
         let min = document.getElementById("min");
         let sec = document.getElementById("sec");
+        let ampm = document.getElementById("ampm"); // Added reference for AM/PM span
 
         setInterval(() => {
             let currentTime = new Date();
-
-            hrs.innerHTML = (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours();
+            let hours = currentTime.getHours();
+            
+           
+            let amOrPm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; 
+            
+            hrs.innerHTML = (hours < 10 ? "0" : "") + hours;
             min.innerHTML = (currentTime.getMinutes() < 10 ? "0" : "") + currentTime.getMinutes();
             sec.innerHTML = (currentTime.getSeconds() < 10 ? "0" : "") + currentTime.getSeconds();
+            ampm.innerHTML = amOrPm; // Set AM/PM
         }, 1000)
-
-
-
     </script>
 </body>
 

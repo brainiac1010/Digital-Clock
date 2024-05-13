@@ -31,7 +31,8 @@
     align-items: center;
     display: flex;
     backdrop-filter: blur(100px);
-
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
 }
 
 .container1::before {
@@ -39,12 +40,13 @@
     width: 180px;
     height: 180px;
     background: #f41b75;
-    border-radius: 5px;
+    border-radius: 50%;
     position: absolute;
     left: -50px;
     top: -50px;
     z-index: -1;
-    ;
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
 }
 
 .container1::after {
@@ -57,7 +59,8 @@
     right: -30px;
     bottom: -50px;
     z-index: -1;
-
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
 }
 
 .clock span {
@@ -66,22 +69,72 @@
     display: inline-block;
     text-align: center;
     position: relative;
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
 }
 
-.clock span::after{
-   
+.clock span::after {
     font-size: 16px;
     position: absolute;
     bottom: -5px;
     left: 50%;
-    transform: translateX((-50%));
+    transform: translateX(-50%);
+    bottom: 0;
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
 }
-#hrs::after{
-content: 'H0URS';
+
+#hrs::after {
+    content: 'HOURS';
 }
-#min::after{
-content: 'MINS';
+
+#min::after {
+    content: 'MINS';
 }
-#sec::after{
-content: 'SEC';
+
+#sec::after {
+    content: 'SECS';
+}
+
+.clock span {
+    margin-right: 5px;
+}
+
+
+.container:hover .clock {
+    transform: rotateY(180deg);
+}
+
+.container:hover .container1::before {
+    transform: rotateY(180deg);
+}
+
+.container:hover .container1::after {
+    transform: rotateY(180deg);
+}
+
+.container:hover .clock span {
+    transform: rotateY(180deg);
+}
+
+.container:hover .clock span::after {
+    transform: rotateY(180deg);
+}
+
+
+@media only screen and (max-width: 768px) {
+    .container1 {
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        padding: 20px;
+        top: auto;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .clock {
+        height: 300px;
+    }
 }
