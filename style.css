@@ -101,23 +101,23 @@
 }
 
 
-.container:hover .clock {
+.container.clicked .clock {
     transform: rotateY(180deg);
 }
 
-.container:hover .container1::before {
+.container.clicked .container1::before {
     transform: rotateY(180deg);
 }
 
-.container:hover .container1::after {
+.container.clicked .container1::after {
     transform: rotateY(180deg);
 }
 
-.container:hover .clock span {
+.container.clicked .clock span {
     transform: rotateY(180deg);
 }
 
-.container:hover .clock span::after {
+.container.clicked .clock span::after {
     transform: rotateY(180deg);
 }
 
