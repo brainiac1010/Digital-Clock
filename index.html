@@ -25,7 +25,7 @@
      let hrs = document.getElementById("hrs");
         let min = document.getElementById("min");
         let sec = document.getElementById("sec");
-        let ampm = document.getElementById("ampm"); // Added reference for AM/PM span
+        let ampm = document.getElementById("ampm"); 
 
         setInterval(() => {
             let currentTime = new Date();
@@ -39,7 +39,7 @@
             hrs.innerHTML = (hours < 10 ? "0" : "") + hours;
             min.innerHTML = (currentTime.getMinutes() < 10 ? "0" : "") + currentTime.getMinutes();
             sec.innerHTML = (currentTime.getSeconds() < 10 ? "0" : "") + currentTime.getSeconds();
-            ampm.innerHTML = amOrPm; // Set AM/PM
+            ampm.innerHTML = amOrPm; 
         }, 1000)
     </script>
 </body>
