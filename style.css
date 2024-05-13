@@ -121,7 +121,6 @@
     transform: rotateY(180deg);
 }
 
-
 @media only screen and (max-width: 768px) {
     .container1 {
         width: 90%;
