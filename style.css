@@ -85,15 +85,15 @@
 }
 
 #hrs::after {
-    content: 'HOURS';
+    content: 'HOUR';
 }
 
 #min::after {
-    content: 'MINS';
+    content: 'MIN';
 }
 
 #sec::after {
-    content: 'SECS';
+    content: 'SEC';
 }
 
 .clock span {
